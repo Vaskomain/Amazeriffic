@@ -63,6 +63,24 @@ main .main_image {
     float: right;
     width: 285px;
 }
+.tabs a span {
+    display: inline-block;
+    border-radius: 5px 5px 0 0;
+    width: 100px;
+    margin-right: 10px;
+    text-align: center;
+    background: #ddd;
+    padding: 5px;
+}
+.tabs a span.active {
+    background: #eee;
+}
+.content {
+    padding: 10px;
+}
+.content li{
+    padding: 3px;
+}
 .lorem_text {
     padding-top: 10px;
     padding-bottom: 10px;
