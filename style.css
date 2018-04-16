@@ -1,0 +1,87 @@
+p, a, ul {
+    font-family: 'Roboto', sans-serif;
+}
+h1{
+    font-family: 'Denk One', sans-serif;
+    font-size: xx-large;
+}
+h2, h3, h4, h5 {
+    font-family: 'Ubuntu', sans-serif; 
+}
+body{
+    font-size: 100%;
+}
+h2{
+    font-size: x-large;
+}
+h3, h5{
+    font-size: larger;
+}
+.important {
+    font-size: larger;
+}
+.onePointTwo {
+    font-size: 1.2em;
+}
+body {
+    background: #f9e933;
+}
+header, main, footer {
+    min-width: 855px;
+}
+header .container, main .container, footer .container {
+    max-width: 855px;
+    margin: auto;
+}
+
+header{
+    background: white;
+    overflow: auto;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+header h1 {
+    float: left;
+    width: 570px;
+}
+header nav {
+    float: right;
+    width: 285px;
+}
+main{
+    background: white;
+    overflow: auto;
+    padding-top: 25px;
+    padding-bottom: 30px;
+}
+main .main_text {
+    float: left;
+    width: 570px;
+}
+main .main_image {
+    float: right;
+    width: 285px;
+}
+.lorem_text {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+footer{
+    overflow: auto;
+    padding-top: 25px;
+}
+footer .contact {
+    float: left;
+    width: 570px;
+}
+footer .sitemap {
+    float: right;
+    width: 285px;
+}
+a {
+    color:red;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
