@@ -77,9 +77,14 @@ main .main_image {
 }
 .content {
     padding: 10px;
+    background: #eee;
 }
 .content li{
     padding: 3px;
+}
+.content h3{
+    background: lightgrey;
+    margin-bottom: 4px;
 }
 .lorem_text {
     padding-top: 10px;
@@ -96,6 +101,9 @@ footer .contact {
 footer .sitemap {
     float: right;
     width: 285px;
+}
+footer p, footer h5, footer li {
+    padding: 3px;
 }
 a {
     color:red;
