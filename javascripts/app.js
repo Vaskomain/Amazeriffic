@@ -6,9 +6,11 @@ var main = function (toDoObjects) {
 
 
     function AddTaskFromInputBox() {
-        if ($(".task-input input").val() !== "") {
-            console.log($(".task-input").val());
-            toDos.push($(".task-input").val());
+        if ($(".description input").val() !== "") {
+            var tags = $(".tags").val().split(",");
+            var description = $(".description").val();
+            toDoObjects.push({"description":description,"tags":tags});
+            toDos.push(description);
             $(".tabs a:first-child span").trigger("click");
         }
     }
@@ -83,8 +85,10 @@ var main = function (toDoObjects) {
                     $("main .content").append($content);
                 });
             } else if ($element.parent().is(":nth-child(4)")) {
-                $("main .content").append($("<ul>").text("Введите новую задачу:"));
-                $("main .content").append($("<input>").addClass("task-input").on("keypress",
+                $("main .content").append($("<p>").text("Описание:"));
+                $("main .content").append($("<input>").addClass("description"));
+                $("main .content").append($("<p>").text("Тэги:"));
+                $("main .content").append($("<input>").addClass("tags").on("keypress",
                     function (event) {
                         if (event.keyCode === 13) {
                             AddTaskFromInputBox();
