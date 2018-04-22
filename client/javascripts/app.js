@@ -1,16 +1,22 @@
 var main = function (toDoObjects) {
     "use strict";
-    var toDos = toDoObjects.map(function (toDo) {
-        return toDo.description;
-    });
-
-
+    function refreshToDos(toDoObjects){
+        return toDoObjects.map(function (toDo) {
+            return toDo.description;
+        });
+    }
+    var toDos = refreshToDos(toDoObjects);
+    
     function AddTaskFromInputBox() {
         if ($(".description input").val() !== "") {
             var tags = $(".tags").val().split(",");
             var description = $(".description").val();
             toDoObjects.push({"description":description,"tags":tags});
-            toDos.push(description);
+            $.post("todos",{},function (response){
+                console.log("Данные отправлены");
+                console.log(response);
+            });
+            refreshToDos(toDoObjects);
             $(".tabs a:first-child span").trigger("click");
         }
     }
@@ -105,33 +111,7 @@ var main = function (toDoObjects) {
     $(".tabs a:first-child span").trigger("click");
 };
 $(document).ready(function () {
-    //$.getJSON("todos.json", function (toDoObjects) {
-    //    main(toDoObjects);
-    //});
-    var toDoObjects = [{
-            "description": "Купить продукты",
-            "tags": ["шопинг", "рутина"]
-        },
-        {
-            "description": "Сделать несколько новых задач",
-            "tags": ["писательство", "работа"]
-        },
-        {
-            "description": "Подготовиться к лекции в понедельник",
-            "tags": ["работа", "преподавание"]
-        },
-        {
-            "description": "Ответить на электронные письма",
-            "tags": ["работа"]
-        },
-        {
-            "description": "Вывести Грейси на прогулку в парк",
-            "tags": ["рутина", "питомцы"]
-        },
-        {
-            "description": "Закончить писать книгу",
-            "tags": ["писательство", "работа"]
-        }
-    ];
-    main(toDoObjects);
+    $.getJSON("todos.json", function (toDoObjects) {
+        main(toDoObjects);
+    });
 });
