@@ -11,13 +11,13 @@ var main = function (toDoObjects) {
         if ($(".description input").val() !== "") {
             var tags = $(".tags").val().split(",");
             var description = $(".description").val();
-            toDoObjects.push({"description":description,"tags":tags});
-            $.post("todos",{},function (response){
-                console.log("Данные отправлены");
+            var newToDo = {"description":description,"tags":tags};
+            $.post("todos",newToDo,function (response){
                 console.log(response);
+                toDoObjects.push(newToDo);
+                toDos = refreshToDos(toDoObjects);
+                $(".tabs a:first-child span").trigger("click");
             });
-            refreshToDos(toDoObjects);
-            $(".tabs a:first-child span").trigger("click");
         }
     }
 
